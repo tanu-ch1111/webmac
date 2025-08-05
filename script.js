@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const lockScreen = document.getElementById('lock-screen');
+  const passwordInput = document.getElementById('passwordInput');
+  const loginButton = document.getElementById('loginButton');
+  function handleLogin() {
+    lockScreen.classList.add('fade-out');
+  }
+  loginButton.addEventListener('click', handleLogin);
+  passwordInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      handleLogin();
+    }
+  });
   const desktop = document.getElementById('desktop');
   const dock = document.getElementById('dock');
   let zIndexCounter = 100;
